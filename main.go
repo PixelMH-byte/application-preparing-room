@@ -16,7 +16,6 @@ func main() {
     if err := config.ConnectDB(); err != nil {
         log.Fatal("Error al conectar a la base de datos:", err)
     }
-    // Ya no necesitamos el defer close
 
     // Crear un nuevo router Gin
     r := gin.Default()
