@@ -21,8 +21,8 @@ func RegisterRoutes() *gin.Engine {
 	}))
 
 	// Rutas de la API
-	r.GET("/", Handler.Welcome)         // Ruta de prueba para verificar el servidor
-	
-
+	r.GET("/", Handler.Welcome)          // Ruta de prueba para verificar el servidor
+	r.POST("/register", Handler.Register) // Ruta para registrar un usuario
+	r.POST("/login",Handler.Login)
 	return r
 }

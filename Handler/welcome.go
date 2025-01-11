@@ -6,6 +6,9 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+// Welcome es una función de prueba para la ruta "/"
 func Welcome(c *gin.Context) {
-	c.String(http.StatusOK, "¡Bienvenido a la API del proyecto de localizacion de cablescom!")
+	c.JSON(http.StatusOK, gin.H{
+		"message": "Welcome to Preparing Room API!",
+	})
 }
