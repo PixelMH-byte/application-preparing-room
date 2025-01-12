@@ -23,10 +23,11 @@ func RegisterRoutes() *gin.Engine {
 	// Rutas de la API
 	r.GET("/", Handler.Welcome)          // Ruta de prueba para verificar el servidor
 	r.GET("/viewRoom",Handler.ViewRoom) //ruta para visualizar todas las habitaciones
+	r.GET("/viewUser",Handler.ViewUsers) //ruta para visualizar a todos los usuarios
 	r.POST("/register", Handler.Register) // Ruta para registrar un usuario
 	r.POST("/login",Handler.Login)
 	r.POST("/createRoom",Handler.CreateRoom) //ruta para crear habitaciones
-
+	r.POST("/assignTask",Handler.AssignTask) //ruta para asignar la tarea de limpieza de habitacion
 
 
 
