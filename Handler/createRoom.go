@@ -34,7 +34,7 @@ func CreateRoom(c *gin.Context) {
 	}
 
 	// Insertar la habitación en la tabla room
-	queryInsert := "INSERT INTO room (planta, tamaño,num_habitacion) VALUES (?, ?)"
+	queryInsert := "INSERT INTO room (planta, tamaño, num_habitacion) VALUES (?, ?, ?)" // Aquí se corrige la cantidad de placeholders
 	_, err = config.DBTurso.Exec(queryInsert, roomRequest.Planta, roomRequest.Tamaño, roomRequest.Num_Habitacion)
 	if err != nil {
 		c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al crear la habitación", "details": err.Error()})
@@ -45,8 +45,8 @@ func CreateRoom(c *gin.Context) {
 	c.JSON(http.StatusCreated, gin.H{
 		"message": "Habitación creada exitosamente",
 		"room": gin.H{
-			"planta": roomRequest.Planta,
-			"tamano": roomRequest.Tamaño,
+			"planta":         roomRequest.Planta,
+			"tamano":         roomRequest.Tamaño,
 			"num_habitacion": roomRequest.Num_Habitacion,
 		},
 	})

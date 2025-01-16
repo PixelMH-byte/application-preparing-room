@@ -5,6 +5,7 @@ import (
 
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
+	
 )
 
 // RegisterRoutes configura las rutas y middlewares del servidor
@@ -30,6 +31,8 @@ func RegisterRoutes() *gin.Engine {
 	r.POST("/assignTask",Handler.AssignTask) //ruta para asignar la tarea de limpieza de habitacion
 	r.POST("/updateStatusTask",Handler.UpdateStatusTask) //ruta para actualizar la columna status
 	r.DELETE("/deleteUser/:codigo_empleado", Handler.DeleteUser)
+	r.PUT("/updateToAdmin/:codigo_empleado", Handler.UpdateToAdmin)
+		
 
 
 	return r
