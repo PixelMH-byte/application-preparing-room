@@ -15,4 +15,6 @@ type Task struct {
 	Status         string `json:"status"`
 	RoomID         int    `json:"room_id"`
 	CodigoEmpleado string `json:"codigo_empleado"`
+	Nombre         string `json:"nombre"`
+	Apellido       string `json:"apellido"`
 }
