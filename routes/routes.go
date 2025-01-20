@@ -32,7 +32,8 @@ func RegisterRoutes() *gin.Engine {
 	r.POST("/updateStatusTask",Handler.UpdateStatusTask) //ruta para actualizar la columna status
 	r.DELETE("/deleteUser/:codigo_empleado", Handler.DeleteUser)
 	r.PUT("/updateToAdmin/:codigo_empleado", Handler.UpdateToAdmin)
-		
+	r.DELETE("/deleteRoom/:id", Handler.DeleteRoom) // Ruta para eliminar una habitación
+	r.PUT("/updateRoom/:id",Handler.UpdateRoom) //ruta para actualizar una habitacion
 
 
 	return r
