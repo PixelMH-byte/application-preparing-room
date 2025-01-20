@@ -10,7 +10,7 @@ import (
 
 func ViewRoom(c *gin.Context) {
 	// Consulta SQL para obtener los datos de la tabla room
-	query := "SELECT id, planta, tamaño FROM room"
+	query := "SELECT id, planta, tamaño,num_habitacion FROM room"
 
 	// Slice para almacenar los resultados
 	var rooms []models.Room
@@ -26,7 +26,7 @@ func ViewRoom(c *gin.Context) {
 	// Recorrer los resultados
 	for rows.Next() {
 		var room models.Room
-		if err := rows.Scan(&room.ID, &room.Planta, &room.Tamaño); err != nil {
+		if err := rows.Scan(&room.ID, &room.Planta, &room.Tamaño, &room.Num_habitacion); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al leer los datos de las habitaciones", "details": err.Error()})
 			return
 		}
