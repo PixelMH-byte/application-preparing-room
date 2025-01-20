@@ -15,6 +15,7 @@ func ViewTaskUser(c *gin.Context) {
 	// Consultar las tareas asignadas al empleado con el código proporcionado
 	query := `
 		SELECT 
+			taskRoom.id,
 			taskRoom.task_name, 
 			taskRoom.status, 
 			room.planta, 
@@ -46,7 +47,7 @@ func ViewTaskUser(c *gin.Context) {
 	// Iterar sobre los resultados de la consulta
 	for rows.Next() {
 		var task models.TaskDetails
-		if err := rows.Scan(&task.TaskName, &task.Status, &task.Planta, &task.NumHabitacion, &task.CodigoEmpleado); err != nil {
+		if err := rows.Scan(&task.ID, &task.TaskName, &task.Status, &task.Planta, &task.NumHabitacion, &task.CodigoEmpleado); err != nil {
 			c.JSON(http.StatusInternalServerError, gin.H{"error": "Error al procesar las tareas del usuario", "details": err.Error()})
 			return
 		}
