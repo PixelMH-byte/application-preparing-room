@@ -33,10 +33,12 @@ func RegisterRoutes() *gin.Engine {
 	r.POST("/createRoom",Handler.CreateRoom) //ruta para crear habitaciones
 	r.POST("/assignTask",Handler.AssignTask) //ruta para asignar la tarea de limpieza de habitacion
 	r.POST("/updateStatusTask",Handler.UpdateStatusTask) //ruta para actualizar la columna status
+	r.POST("/assingScheduleUser",Handler.AssignSchedulesUser) //ruta para asignar el horario al empleado
 	r.DELETE("/deleteUser/:codigo_empleado", Handler.DeleteUser)
 	r.PUT("/updateToAdmin/:codigo_empleado", Handler.UpdateToAdmin)
 	r.DELETE("/deleteRoom/:id", Handler.DeleteRoom) // Ruta para eliminar una habitación
 	r.PUT("/updateRoom/:id",Handler.UpdateRoom) //ruta para actualizar una habitacion
+	r.PUT("/updateSchedule/:codigo_empleado",Handler.UpdateSchedulesUser)
 
 
 	return r
