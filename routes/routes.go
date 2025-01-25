@@ -28,6 +28,7 @@ func RegisterRoutes() *gin.Engine {
 	r.GET("/viewAllTask",Handler.ViewAllTasks) //ruta para visualizar todas las tareas
 	r.GET("/viewTaskUser/:codigo_empleado",Handler.ViewTaskUser) //ruta para visualizar las tareas segun el codigo_empleado
 	r.GET("/viewLoginSesionUser",Handler.ViewIniciosSesion) //ruta para visualizar los inicios de sesion
+	r.GET("/viewSchedules",Handler.ViewSchedules) //ruta para visualizar todos los horarios
 	r.POST("/register", Handler.Register) // Ruta para registrar un usuario
 	r.POST("/login",Handler.Login)
 	r.POST("/createRoom",Handler.CreateRoom) //ruta para crear habitaciones
